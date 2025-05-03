@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Підключення стилів -->
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body id="top">
+    <!-- ----------- -->
+    <!-- H E A D E R -->
+    <!-- ----------- -->
+    <header id="header" class="header">
+      <a href="#top" class="link-block">
+        <img src="imgs/icons/logo.svg" alt="logo" class="header-logo" />
+      </a>
+      <button class="sidebar-open" onclick="sidebarOpen()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </header>
+
+    <aside class="sidebar">
+      <button class="sidebar-close" onclick="sidebarClose()">X</button>
+      <nav class="sidebar-content">
+        <a href="#for" class="sidebar-link link" onclick="sidebarClose()"
+          >Для кого?</a
+        >
+        <a href="#style" class="sidebar-link link" onclick="sidebarClose()"
+          >Смак та стиль</a
+        >
+        <a href="#price" class="sidebar-link link" onclick="sidebarClose()"
+          >Види та ціни</a
+        >
+        <a href="#reviews" class="sidebar-link link" onclick="sidebarClose()"
+          >Відгуки</a
+        >
+        <a href="#social" class="sidebar-link link" onclick="sidebarClose()"
+          >Контакти</a
+        >
+      </nav>
+    </aside>
+
+    <!-- ----------------------- -->
+    <!-- M A I N   S E C T I O N -->
+    <!-- ----------------------- -->
+    <main class="main">
+      <img src="imgs/meat.png" class="main-meat-1 meat">
+      <img src="imgs/meat.png" class="main-meat-2 meat">
+      <img src="imgs/meat.png" class="main-meat-3 meat">
+      <img src="imgs/meat.png" class="main-meat-4 meat">
+      <div class="main-block">
+        <img src="imgs/icons/logo.svg" alt="Наше лого" class="main-logo" />
+        <div class="main-desc">
+          <p class="main-desc-text">Джерки власного виробництва</p>
+          <img
+            src="imgs/smile.png"
+            alt="Смайлик cмачно. Ням!"
+            class="main-desc-smile"
+          />
+        </div>
+        <a href="#order"><button class="main-btn">Поласувати зараз</button></a>
+      </div>
+      <img
+        src="imgs/main-img.png"
+        alt="Щасливе фото власників"
+        class="main-img"
+      />
+    </main>
+
+    <!-- ------------------------------- -->
+    <!-- F O R   W H O ?   S E C T I O N -->
+    <!-- ------------------------------- -->
+    <section class="for" id="for">
+      <h2 class="for-title">Для кого?</h2>
+      <ul class="for-list">
+        <li class="for-item">
+          <div class="for-item-cnt">
+            <h3 class="for-item-title">Пікнік</h3>
+            <p class="for-item-text">
+              Відпочинок на свіжому<br />повітрі з друзями та<br />джекрами -
+              незабутньо
+            </p>
+          </div>
+          <img
+            src="imgs/for-1.png"
+            alt="Фото вечірньої тусовки з друзями"
+            class="for-item-img"
+          />
+        </li>
+
+        <div class="for-list-split">
+          <div class="for-list-split-stic"></div>
+          <div class="for-list-split-dick"></div>
+          <div class="for-list-split-stic"></div>
+        </div>
+
+        <li class="for-item">
+          <div class="for-item-cnt">
+            <h3 class="for-item-title">СПОРТ</h3>
+            <p class="for-item-text">
+              Сушене м’ясо дасть<br />білок для тренувань<br />під час
+              навантаження
+            </p>
+          </div>
+          <img
+            src="imgs/for-2.png"
+            alt="Фото спортсмена в качалці"
+            class="for-item-img"
+          />
+        </li>
+
+        <div class="for-list-split">
+          <div class="for-list-split-stic"></div>
+          <div class="for-list-split-dick"></div>
+          <div class="for-list-split-stic"></div>
+        </div>
+
+        <li class="for-item">
+          <div class="for-item-cnt">
+            <h3 class="for-item-title">ПОдарунок</h3>
+            <p class="for-item-text">
+              Чудове привітання для<br />бльзької людини. Буде<br />смачно і
+              цікаво
+            </p>
+          </div>
+          <img
+            src="imgs/for-3.png"
+            alt="Фото наших джерок, оформлених як подарунок"
+            class="for-item-img"
+          />
+        </li>
+      </ul>
+    </section>
+
+    <!-- ------------------------- -->
+    <!-- S T Y L E   S E C T I O N -->
+    <!-- ------------------------- -->
+    <section class="style">
+      <h2 class="style-title" id="style">Смак та стиль</h2>
+      <img
+        src="imgs/style.png"
+        alt="В руках дівчини упаковка джерок"
+        class="style-img"
+      />
+      <p class="style-text">
+        &nbsp;&nbsp;Джерки мають насичений та пікантний присмак з глибокою
+        ноткою. Вони пружні, злегка хрусткі та залишають приємний післясмак
+        спецій.
+      </p>
+      <p class="style-text">
+        &nbsp;&nbsp;Елегантний та сучасний дизайн, що підкреслює смак та стиль
+        наших джерок. Нічого зайвого, всьо збаланслвано та лаконічно.
+      </p>
+      <p class="style-text">
+        &nbsp;&nbsp;Робимо усе щоб Ви були чатиною цього та щасливі.
+      </p>
+    </section>
+
+    <!-- ------------------------- -->
+    <!-- P R I C E   S E C T I O N -->
+    <!-- ------------------------- -->
+    <section class="price" id="price">
+      <div>
+        <h2 class="price-title">Смаки та ціни</h2>
+        <img
+          src="imgs/price-1.png"
+          class="price-img"
+          alt="Вигляд наших джерок"
+        />
+        <p class="price-text">
+          🐓джерки курячі (100г) - 120грн<br />🐖джерки свинячі (100г) -
+          130грн<br />🦃джерки індичі (100г) - 140грн<br />🐖ковбаски свинячі
+          (100г) - 135грн<br />🦃ковбаски індичі (100г) - 135грн
+        </p>
+      </div>
+
+      <div>
+        <h2 class="price-title">Набори - 450грн</h2>
+        <img
+          src="imgs/price-2.jpg"
+          class="price-img"
+          alt="Вигляд наших боксів"
+        />
+        <p class="price-text">
+          🐓 курка<br />7 смаків по 50г<br />- - - - - - - - - - - - -<br />🐖
+          свинина<br />5 смаків по 50г<br />2 смаки ковбасок по 50г
+        </p>
+      </div>
+    </section>
+
+    <!-- ----------------------- -->
+    <!-- S O C I A L   M E D I A -->
+    <!-- ----------------------- -->
+    <section class="social" id="social">
+      <h2 class="social-title">Соціальні мережі</h2>
+      <ul class="social-list">
+        <li class="social-item">
+          <div>
+            <img src="imgs/icons/tiktok.svg" alt="" class="social-img" />
+            <p class="social-name">TikTok</p>
+          </div>
+          <a href="https://www.tiktok.com/@_jerky_jn/" target="_blank"
+            ><button class="social-btn">Перейти</button></a
+          >
+        </li>
+        <li class="social-item">
+          <div>
+            <img src="imgs/icons/instagram.svg" alt="" class="social-img" />
+            <p class="social-name">Instagram</p>
+          </div>
+          <a
+            href="https://www.instagram.com/_miasko_vid_udodykiv/"
+            target="_blank"
+            ><button class="social-btn">Перейти</button></a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <!-- ----------------------- -->
+    <!-- O R E R   S E C T I O N -->
+    <!-- ----------------------- -->
+    <section class="order" id="order">
+      <h2 class="order-title">Замовляй поки є!</h2>
+      <p class="order-desc">
+        Напишіть, або подзвоніть нам і ми відповімо на всі Ваші питання<br/>
+      </p>
+      <div class="social-list">
+        <div class="social-item">
+          <div>
+            <img src="imgs/icons/viber.svg" alt="" class="social-img" />
+            <p class="social-name">Viber</p>
+          </div>
+        <span class="order-desc-tel">+380988379157</span>
+        <a href="viber://chat?number=+380988379157"><button class="social-btn">Написати</button></a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ------------------------------- -->
+    <!-- C U S T O M E R   R E V I E W S -->
+    <!-- ------------------------------- -->
+    <section class="reviews" id="reviews">
+      <h2 class="reviews-title">Відгуки клієнтів</h2>
+
+      <div class="slider" id="slider">
+        <div class="slides">
+          <div class="slide"><img src="imgs/review-1.png"/></div>
+          <div class="slide"><img src="imgs/review-2.png"/></div>
+          <div class="slide"><img src="imgs/review-3.png"/></div>
+        </div>
+        <button class="nav-button prev">&#10094;</button>
+        <button class="nav-button next">&#10095;</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
