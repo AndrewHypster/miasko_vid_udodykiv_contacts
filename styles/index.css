@@ -129,7 +129,7 @@ button {
 \* --------- */
 .header {
   position: fixed;
-  z-index: 10;
+  z-index: 1;
   width: 100vw;
   height: 15.3vw;
   box-sizing: border-box;
@@ -171,7 +171,7 @@ button {
   position: fixed;
   top: 0;
   left: 100%;
-  z-index: 11;
+  z-index: 2;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
@@ -380,11 +380,40 @@ button {
 # S T Y L E #
 \* ------- */
 .style {
-  width: 81vw;
-  margin: 4.8vw auto;
+  position: relative;
+  overflow: hidden;
+  padding: 4.8vw 20vw;
   gap: 4vw;
   text-align: center;
   display: grid;
+}
+
+.style::before {
+  position: absolute;
+  content: '';
+  width: 80vw;
+  height: 80vw;
+  left: 0;
+  transform: translate(-90%);
+  background: #fba520;
+  border-radius: 100vw;
+  filter: blur(10vw);
+  display: block;
+}
+
+.style::after {
+  position: absolute;
+  content: '';
+  width: 50vw;
+  height: 50vw;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transform: translate(70%, -40%);
+  background: #fba520;
+  border-radius: 100vw;
+  filter: blur(10vw);
+  display: block;
 }
 
 .style-img {
@@ -448,8 +477,8 @@ button {
 .social-list {
   width: fit-content;
   margin: 0 auto;
-  margin-top: 4vw;
-  gap: 8vw;
+  margin-top: 2vw;
+  gap: 1.2vw;
   display: grid;
 }
 
@@ -458,29 +487,44 @@ button {
   display: grid;
 }
 
-.social-item div {
-  align-items: center;
-  gap: 4vw;
+.social-btn {
+  width: 70vw;
+  padding: 1.5vw 6vw;
+  border-radius: 2vw;
+  font-size: 6vw;
+  text-transform: none;
+  background: transparent;
+  color: var(--white);
+  border: 0.2vw solid transparent;
+  gap: 4%;
+  cursor: pointer;
+  justify-content: center;
   display: flex;
 }
 
-.social-name {
-  font-size: 11vw;
+.social-btn img {
+  width: 8vw;
 }
 
-.social-img {
-  width: 25vw;
+.tiktok {
+  border-color: var(--white);
 }
 
-.social-btn {
-  width: 100%;
-  padding: 2vw 4vw;
-  border-radius: 2vw;
-  font-size: 8vw;
-  background: transparent;
-  color: var(--main);
-  border: 0.5vw solid var(--main);
+.tiktok p {
+  text-shadow: .4vw .4vw 0 #c31414;
 }
+
+.instagram {
+  background: linear-gradient(200deg, #1400C8, #B900B4, #F50000);
+}
+
+.viber {
+  background: #9146FF;
+}
+
+/* ------- *\
+# O R D E R #
+\* ------- */
 
 .order {
   margin-top: 10vw;
@@ -496,13 +540,6 @@ button {
   width: 85vw;
   margin: 0 auto;
   font-size: 5vw;
-  display: block;
-}
-
-.order-desc-tel {
-  width: fit-content;
-  margin: 0 auto;
-  font-size: 8vw;
   display: block;
 }
 
