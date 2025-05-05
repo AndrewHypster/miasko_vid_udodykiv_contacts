@@ -382,7 +382,7 @@ button {
 .style {
   position: relative;
   overflow: hidden;
-  padding: 4.8vw 20vw;
+  padding: 4.8vw 15vw;
   gap: 4vw;
   text-align: center;
   display: grid;
