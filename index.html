@@ -48,10 +48,18 @@
     <!-- M A I N   S E C T I O N -->
     <!-- ----------------------- -->
     <main class="main">
-      <img src="imgs/meat.png" class="main-meat-1 meat">
-      <img src="imgs/meat.png" class="main-meat-2 meat">
-      <img src="imgs/meat.png" class="main-meat-3 meat">
-      <img src="imgs/meat.png" class="main-meat-4 meat">
+      <div class="main-video-box">
+        <video class="main-bg" autoplay muted loop playsinline>
+          <source src="video/video-bg.mp4" type="video/mp4" />
+          Ваш браузер не підтримує відео.
+        </video>
+        <div class="main-bg-grad"></div>
+      </div>
+
+      <img src="imgs/meat.png" class="main-meat-1 meat" />
+      <img src="imgs/meat.png" class="main-meat-2 meat" />
+      <img src="imgs/meat.png" class="main-meat-3 meat" />
+      <img src="imgs/meat.png" class="main-meat-4 meat" />
       <div class="main-block">
         <img src="imgs/icons/logo.svg" alt="Наше лого" class="main-logo" />
         <div class="main-desc">
@@ -166,11 +174,13 @@
     <section class="price" id="price">
       <div>
         <h2 class="price-title">Смаки та ціни</h2>
-        <img
-          src="imgs/price-1.png"
-          class="price-img"
-          alt="Вигляд наших джерок"
-        />
+        <div class="price-img-box">
+          <img
+            src="imgs/price-1.png"
+            class="price-img"
+            alt="Вигляд наших джерок"
+          />
+        </div>
         <p class="price-text">
           🐓джерки курячі (100г) - 120грн<br />🐖джерки свинячі (100г) -
           130грн<br />🦃джерки індичі (100г) - 140грн<br />🐖ковбаски свинячі
@@ -180,11 +190,20 @@
 
       <div>
         <h2 class="price-title">Набори - 450грн</h2>
-        <img
-          src="imgs/price-2.jpg"
-          class="price-img"
-          alt="Вигляд наших боксів"
-        />
+        <div class="price-img-box">
+          <video
+            class="price-img"
+            style="transform: scale(1.5) translateY(-45%)"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <source src="video/box.mp4" type="video/mp4" />
+            Ваш браузер не підтримує відео.
+          </video>
+        </div>
+
         <p class="price-text">
           🐓 курка<br />7 смаків по 50г<br />- - - - - - - - - - - - -<br />🐖
           свинина<br />5 смаків по 50г<br />2 смаки ковбасок по 50г
@@ -201,7 +220,7 @@
         <li class="social-item">
           <a href="https://www.tiktok.com/@_jerky_jn/" target="_blank"
             ><button class="social-btn tiktok">
-              <img src="imgs/icons/tiktok.svg" alt="">
+              <img src="imgs/icons/tiktok.svg" alt="" />
               <p>TikTok</p>
             </button></a
           >
@@ -211,7 +230,7 @@
             href="https://www.instagram.com/_miasko_vid_udodykiv/"
             target="_blank"
             ><button class="social-btn instagram">
-              <img src="imgs/icons/instagram.svg" alt="">
+              <img src="imgs/icons/instagram.svg" alt="" />
               <p>Instagram</p>
             </button></a
           >
@@ -225,19 +244,19 @@
     <section class="order" id="order">
       <h2 class="order-title">Замовляй поки є!</h2>
       <p class="order-desc">
-        Напишіть, або подзвоніть нам і ми відповімо на всі Ваші питання +380988379157
+        Напишіть, або подзвоніть нам і ми відповімо на всі Ваші питання
+        +380988379157
       </p>
       <div class="social-list">
         <div class="social-item">
           <a href="viber://chat?number=+380988379157">
             <button class="social-btn viber">
-              <img src="imgs/icons/viber.svg" alt="">
+              <img src="imgs/icons/viber.svg" alt="" />
               <p>Viber</p>
             </button>
           </a>
         </div>
       </div>
-
     </section>
 
     <!-- ------------------------------- -->
@@ -248,9 +267,9 @@
 
       <div class="slider" id="slider">
         <div class="slides">
-          <div class="slide"><img src="imgs/review-1.png"/></div>
-          <div class="slide"><img src="imgs/review-2.png"/></div>
-          <div class="slide"><img src="imgs/review-3.png"/></div>
+          <div class="slide"><img src="imgs/review-1.png" /></div>
+          <div class="slide"><img src="imgs/review-2.png" /></div>
+          <div class="slide"><img src="imgs/review-3.png" /></div>
         </div>
         <button class="nav-button prev">&#10094;</button>
         <button class="nav-button next">&#10095;</button>
