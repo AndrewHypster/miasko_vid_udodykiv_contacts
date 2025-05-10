@@ -303,7 +303,6 @@ button {
   max-width: 120vw;
   width: 120vw;
   object-position: center;
-  transform: translateX(-11%);
 }
 
 .main-bg {
