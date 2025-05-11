@@ -28,66 +28,100 @@ window.addEventListener('scroll', function () {
 # S L I D E R #
 \* --------- */
 window.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".slider");
-  const slides = document.querySelector(".slides");
-  const slideCount = document.querySelectorAll(".slide").length;
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
-  const dotsContainer = document.getElementById("dots");
+  const sliders = document.querySelectorAll(".slider");
 
-  let currentIndex = 0;
-  let startX = 0;
+  sliders.forEach((slider) => {
+    const slides = slider.querySelector(".slides");
+    const slideItems = slider.querySelectorAll(".slide");
+    const slideCount = slideItems.length;
+    let currentIndex = 0;
 
-  function goToSlide(index) {
-    if (index < 0) index = slideCount - 1;
-    if (index >= slideCount) index = 0;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    currentIndex = index;
-    updateDots();
-  }
+    const enableArrows = slider.dataset.arrows === "true";
+    const enableDots = slider.dataset.dots === "true";
 
-  function updateDots() {
-    dotsContainer.innerHTML = "";
-    for (let i = 0; i < slideCount; i++) {
-      const dot = document.createElement("span");
-      dot.classList.add('dot')
-      dot.style.background = "transparrent";
-      if (i === currentIndex) dot.style.background = 'var(--main)';
-      dot.addEventListener("click", () => goToSlide(i));
-      dotsContainer.appendChild(dot);
+    // Create navigation buttons if needed
+    let prevBtn, nextBtn;
+    if (enableArrows) {
+      prevBtn = document.createElement("button");
+      nextBtn = document.createElement("button");
+      prevBtn.textContent = "‹";
+      nextBtn.textContent = "›";
+      prevBtn.className = "nav-button prev";
+      nextBtn.className = "nav-button next";
+      slider.appendChild(prevBtn);
+      slider.appendChild(nextBtn);
     }
-  }
 
-  prev.addEventListener("click", () => goToSlide(currentIndex - 1));
-  next.addEventListener("click", () => goToSlide(currentIndex + 1));
+    // Create dots container if needed
+    let dotsContainer;
+    if (enableDots) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.className = "dots";
+      slider.appendChild(dotsContainer);
+    }
 
-  // Swipe support
-  slider.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
+    function goToSlide(index) {
+      if (index < 0) index = slideCount - 1;
+      if (index >= slideCount) index = 0;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      currentIndex = index;
+      updateDots();
+    }
+
+    if (enableDots) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.className = "dots";
+      slider.appendChild(dotsContainer);
+    }
+
+    function updateDots() {
+      if (!enableDots || !dotsContainer) return;
+
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (i === currentIndex) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    if (enableArrows) {
+      prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+      nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
+    }
+
+    // Touch support
+    let startX = 0;
+    slides.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    slides.addEventListener("touchend", (e) => {
+      const diff = e.changedTouches[0].clientX - startX;
+      if (diff > 50) goToSlide(currentIndex - 1);
+      else if (diff < -50) goToSlide(currentIndex + 1);
+    });
+
+    // Mouse drag support
+    let isDragging = false;
+    let mouseStartX = 0;
+
+    slides.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      mouseStartX = e.clientX;
+    });
+
+    slides.addEventListener("mouseup", (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const diff = e.clientX - mouseStartX;
+      if (diff > 50) goToSlide(currentIndex - 1);
+      else if (diff < -50) goToSlide(currentIndex + 1);
+    });
+
+    goToSlide(0);
   });
-
-  slider.addEventListener("touchend", (e) => {
-    let diff = e.changedTouches[0].clientX - startX;
-    if (diff > 50) goToSlide(currentIndex - 1);
-    else if (diff < -50) goToSlide(currentIndex + 1);
-  });
-
-  // Mouse drag support
-  let isDragging = false;
-  let mouseStartX = 0;
-
-  slider.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    mouseStartX = e.clientX;
-  });
-
-  slider.addEventListener("mouseup", (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-    let diff = e.clientX - mouseStartX;
-    if (diff > 50) goToSlide(currentIndex - 1);
-    else if (diff < -50) goToSlide(currentIndex + 1);
-  });
-
-  goToSlide(0);
 });
+
