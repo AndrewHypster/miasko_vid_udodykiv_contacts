@@ -516,6 +516,7 @@ button {
 \* --------------------------- */
 .price {
   position: relative;
+  overflow: hidden;
   margin-top: 10vw;
   gap: 10vw;
   display: grid;
