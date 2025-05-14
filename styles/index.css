@@ -378,11 +378,6 @@ button {
   background: linear-gradient(transparent, var(--black) 80%);
 }
 
-.main.three .main-img {
-  margin-top: -10vw;
-  display: block;
-}
-
 /* ------------- *\
 # F O R   W H O ? #
 \* ------------- */
