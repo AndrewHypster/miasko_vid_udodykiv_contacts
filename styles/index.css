@@ -556,6 +556,7 @@ button {
   z-index: 20;
   top: 0;
   left: 0;
+  width: 45vw;
   transform: translate(-30%, 20%);
   display: block;
 }
@@ -565,6 +566,7 @@ button {
   z-index: 20;
   bottom: 0;
   right: 0;
+  width: 55vw;
   transform: scaleX(-1) translate(-20%, -15%);
   display: block;
 }
