@@ -345,11 +345,6 @@ button {
 .main-img {
   max-width: 100vw;
   width: 100vw !important;
-
-  /* -webkit-filter: drop-shadow(0 0 2vw var(--main))
-    drop-shadow(0 0 2vw var(--main));
-  filter: drop-shadow(0.2vw 0.2vw 0.7vw var(--main))
-    drop-shadow(-0.2vw -0.2vw 0.7vw var(--main)); */
   background: radial-gradient(var(--main), transparent 60%);
 }
 
@@ -380,63 +375,12 @@ button {
   left: 0;
   width: 100vw;
   height: 10vw;
-  /* height: 20vw; */
   background: linear-gradient(transparent, var(--black) 80%);
 }
 
-.main.sec .main-video-box {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-  height: 160vw;
-}
-
-.main.sec .main-img {
-  max-width: 100vw;
-  width: 100vw !important;
-
-  -webkit-filter: none;
-  filter: none;
-  background: none;
-}
-
-.main.three .main-video-box {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-  height: 160vw;
-}
-
 .main.three .main-img {
-  max-width: 100vw;
-  width: 100vw !important;
-
-  -webkit-filter: none;
-  filter: none;
-  background: radial-gradient(var(--white), transparent 60%);
-}
-
-.main.fore .main-video-box {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-  height: 160vw;
-}
-
-.main.fore .main-img {
-  max-width: 100vw;
-  width: 100vw !important;
-
-  -webkit-filter: drop-shadow(0 0 2vw var(--white))
-    drop-shadow(0 0 2vw var(--white));
-  filter: drop-shadow(0vw 0vw 1vw var(--white));
-  background: none;
+  margin-top: -10vw;
+  display: block;
 }
 
 /* ------------- *\
