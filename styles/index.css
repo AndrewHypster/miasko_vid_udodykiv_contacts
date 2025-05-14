@@ -515,6 +515,7 @@ button {
 # T A S T E   A N D   P R I C E #
 \* --------------------------- */
 .price {
+  position: relative;
   margin-top: 10vw;
   gap: 10vw;
   display: grid;
@@ -547,6 +548,24 @@ button {
   width: fit-content;
   margin: 0 auto;
   font-size: 7vw;
+  display: block;
+}
+
+.price-cat2 {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  transform: translate(-30%, 20%);
+  display: block;
+}
+
+.price-cat {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(-1) translate(-20%, -15%);
   display: block;
 }
 
