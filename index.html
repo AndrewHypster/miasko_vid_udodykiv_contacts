@@ -3,13 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="imgs/icons/favicon.svg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="imgs/icons/favicon.svg"
+      type="image/x-icon"
+    />
     <title>М'яско від Удодиків</title>
 
     <!-- Підключення стилів -->
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body id="top">
+    <!-- ------- -->
+    <!-- F O R M -->
+    <!-- ------- -->
+    <div class="form-bg" onclick="closeForm()">
+      <form class="form">
+        <h2 class="form-title">Напишіть нам</h2>
+        <div class="form-inputs">
+          <div class="form-inpt-box">
+            <input
+              class="form-inpt"
+              name="name"
+              type="text"
+              placeholder="Ім'я"
+              required
+            />
+          </div>
+          <div class="form-inpt-box">
+            <input
+              class="form-inpt"
+              name="tel"
+              type="number"
+              placeholder="0680000000"
+              required
+            />
+          </div>
+
+          <div class="form-inpt-box">
+            <textarea
+              class="form-inpt"
+              name="message"
+              type="text"
+              placeholder="Щоб хтіли спробувати? Ваші питання"
+            ></textarea>
+          </div>
+        </div>
+
+        <button class="form-btn" type="button" onclick="sendForm(this)">
+          Надіслати
+        </button>
+        <button class="sidebar-close" type="button" onclick="closeForm()">
+          X
+        </button>
+      </form>
+    </div>
+
     <!-- ----------- -->
     <!-- H E A D E R -->
     <!-- ----------- -->
@@ -79,8 +128,10 @@
                   class="main-desc-smile"
                 />
               </div>
-              <a href="#order"
-                ><button class="main-btn">Поласувати зараз</button></a
+              <a href="#"
+                ><button class="main-btn" onclick="openForm()">
+                  Поласувати зараз
+                </button></a
               >
             </div>
             <img
@@ -120,8 +171,10 @@
                   class="main-desc-smile"
                 />
               </div>
-              <a href="#order"
-                ><button class="main-btn">Поласувати зараз</button></a
+              <a href="#"
+                ><button class="main-btn" onclick="openForm()">
+                  Поласувати зараз
+                </button></a
               >
             </div>
             <img
@@ -161,8 +214,10 @@
                   class="main-desc-smile"
                 />
               </div>
-              <a href="#order"
-                ><button class="main-btn">Поласувати зараз</button></a
+              <a href="#"
+                ><button class="main-btn" onclick="openForm()">
+                  Поласувати зараз
+                </button></a
               >
             </div>
             <img
@@ -343,8 +398,8 @@
         </p>
       </div>
 
-      <img src="imgs/barik2.png" class="price-cat2">
-      <img src="imgs/barik1.png" class="price-cat">
+      <img src="imgs/barik2.png" class="price-cat2" />
+      <img src="imgs/barik1.png" class="price-cat" />
     </section>
 
     <!-- ----------------------- -->

@@ -64,7 +64,6 @@ html {
 }
 
 body {
-  padding-top: 15.3vw;
   font-family: "Oswald", sans-serif;
   color: var(--white);
   background: var(--black);
@@ -123,6 +122,98 @@ button {
 .meat {
   position: absolute;
   z-index: -1;
+}
+
+/* ----- *\
+# F O R M #
+\* ----- */
+.form-bg {
+  position: fixed;
+  z-index: 103;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background: #00000080;
+}
+
+.form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 67vw;
+  padding: 15vw 8vw 8vw;
+  box-sizing: border-box;
+  background: var(--black);
+  box-shadow: 0 0 3vw var(--main);
+  border: .2vw solid var(--main);
+  border-radius: 8vw;
+  text-align: center;
+  gap: 4vw;
+  display: grid;
+}
+
+.form-title {
+  font-size: 8vw;
+}
+
+.form-inputs {
+  display: grid;
+  gap: 1vw;
+}
+
+.form-inpt {
+  padding: 2vw 3vw;
+  font-size: 3vw;
+  color: var(--white);
+  background: var(--black);
+  border: .2vw solid var(--white);
+  border-radius: 2vw;
+}
+
+.form-inpt.err {
+  border-color: #ff0000;
+}
+
+.form-inpt-box {
+  gap: .5vw;
+  display: grid;
+}
+
+.form-inpt-box.err::after {
+  content: 'Не коректні дані 👆';
+  width: fit-content;
+  height: 0%;
+  overflow: hidden;
+  background: #f50000;
+  border-radius: 2vw;
+  color: var(--white);
+  font-size: 3vw;
+  transition: all .3s;
+  display: block;
+}
+.form-inpt-box.err::after {
+  height: auto;
+  padding: 1vw 3vw;
+}
+
+.form-btn {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 2.5vw 12vw;
+  font-size: 4vw;
+  border-radius: 2vw;
+}
+
+.form .sidebar-close {
+  font-size: 4vw;
+  top: 5%;
+}
+
+.form-bg.close {
+  display: none;
 }
 
 /* --------- *\
@@ -285,6 +376,7 @@ button {
 .main {
   width: 100vw;
   position: relative;
+  margin-top: 15.3vw;
   padding-top: 12vw;
   overflow: hidden;
 }

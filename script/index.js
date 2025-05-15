@@ -1,3 +1,6 @@
+/* ----------- *\
+# S I D E B A R #
+\* ----------- */
 function sidebarOpen() {
   const body = document.body;
   const sidebar = document.querySelector(".sidebar");
@@ -14,14 +17,19 @@ function sidebarClose() {
   sidebar.style.left = "100%";
 }
 
-let lastScroll = window.scrollY
-window.addEventListener('scroll', function () {
-  const header = document.querySelector('header')
+/* --------- *\
+# H E A D E R #
+\* --------- */
+let lastScroll = window.scrollY;
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
 
-  if (lastScroll < this.window.scrollY) header.style.transform = "translateY(-100%)"
-  if (lastScroll > this.window.scrollY) header.style.transform = "translateY(0%)"
+  if (lastScroll < this.window.scrollY)
+    header.style.transform = "translateY(-100%)";
+  if (lastScroll > this.window.scrollY)
+    header.style.transform = "translateY(0%)";
 
-  lastScroll = this.window.scrollY
+  lastScroll = this.window.scrollY;
 });
 
 /* --------- *\
@@ -125,3 +133,58 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* ----- *\
+# F O R M #
+\* ----- */
+function openForm() {
+  document.querySelector('.form-bg').classList.remove("close");
+}
+
+function closeForm(btn) {
+  document.querySelector(".form-bg").classList.add("close");
+}
+
+/* --------------- *\
+# S E N D   F O R M #
+\* --------------- */
+function sendForm(btn) {
+  const [name, phone, mssg] = btn.form
+  console.log([name, phone, mssg]);
+  if (name.value.length == 0) {
+    name.classList.add('err')
+    name.parentElement.classList.add("err");
+  } else {
+    name.classList.remove("err");
+    name.parentElement.classList.remove("err");
+  }
+  
+  if (phone.value.length != 10) {
+    phone.classList.add("err");
+    phone.parentElement.classList.add("err");
+  } else {
+    phone.classList.remove("err");
+    phone.parentElement.classList.remove("err");
+  };
+
+  if (name.value.length == 0 || phone.value.length != 10) return
+
+  fetch("http://localhost:3000/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: name.value,
+      phone: phone.value,
+      mssg: mssg.value,
+    }),
+  })
+    .then((req) => {
+      if (req.status == 200) {
+        alert("Повідомлення успішно надіслано");
+      } else {
+        alert(`Error ${req.status}: Виникла помилка`);
+      }
+    })
+    .catch((err) => alert(`Error: Виникла помилка`));
+}
