@@ -156,7 +156,7 @@ document.querySelector(".form-bg").addEventListener("click", function (event) {
 \* --------------- */
 function sendForm(btn) {
   const [name, phone, mssg] = btn.form
-  console.log([name, phone, mssg]);
+
   if (name.value.length == 0) {
     name.classList.add('err')
     name.parentElement.classList.add("err");
@@ -175,7 +175,7 @@ function sendForm(btn) {
 
   if (name.value.length == 0 || phone.value.length != 10) return
 
-  fetch("../api/send.js", {
+  fetch("/api/send.js", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
