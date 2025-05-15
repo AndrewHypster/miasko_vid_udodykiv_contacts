@@ -16,7 +16,7 @@ export default async function handler (req, res) {
   });
 
   const mailOptions = {
-    from: email,
+    from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
     subject: "М'яско контакти",
     text: `
