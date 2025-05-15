@@ -175,7 +175,7 @@ function sendForm(btn) {
 
   if (name.value.length == 0 || phone.value.length != 10) return
 
-  fetch("http://localhost:3000/send", {
+  fetch("../api/send.js", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
