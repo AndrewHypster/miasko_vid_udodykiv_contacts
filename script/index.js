@@ -144,6 +144,13 @@ function closeForm(btn) {
   document.querySelector(".form-bg").classList.add("close");
 }
 
+document.querySelector(".form-bg").addEventListener("click", function (event) {
+  // якщо клік був саме по фону, а не по формі
+  if (event.target === this) {
+    this.classList.add("close"); // ховаємо форму
+  }
+});
+
 /* --------------- *\
 # S E N D   F O R M #
 \* --------------- */
