@@ -86,6 +86,7 @@ ul {
 img,
 video {
   max-width: 70vw;
+  width: 100vw;
 }
 
 button {
