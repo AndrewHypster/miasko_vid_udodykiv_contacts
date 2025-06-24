@@ -304,7 +304,7 @@ button {
 }
 
 .header-logo {
-  position: relative;
+  width: fit-content;
   height: 10vw;
 }
 
